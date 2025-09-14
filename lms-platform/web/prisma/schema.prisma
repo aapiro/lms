@@ -1,5 +1,5 @@
 // This is your Prisma schema file,
-// learn more about it at https://prismlang.github.io/docs/reference/all-prisma-directives
+// learn more about it at https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -68,15 +68,15 @@ model Course {
 }
 
 model CourseStatus {
-  DRAFT
-  PUBLISHED
-  ARCHIVED
+  DRAFT      "DRAFT"
+  PUBLISHED  "PUBLISHED"
+  ARCHIVED   "ARCHIVED"
 }
 
 model Visibility {
-  PUBLIC
-  PRIVATE
-  HIDDEN
+  PUBLIC   "PUBLIC"
+  PRIVATE  "PRIVATE"
+  HIDDEN   "HIDDEN"
 }
 
 model Module {
@@ -115,10 +115,10 @@ model Enrollment {
 }
 
 model EnrollmentStatus {
-  PENDING
-  ACTIVE
-  COMPLETED
-  DROPPED
+  PENDING   "PENDING"
+  ACTIVE    "ACTIVE"
+  COMPLETED "COMPLETED"
+  DROPPED   "DROPPED"
 }
 
 model Assignment {
@@ -150,9 +150,9 @@ model Submission {
 }
 
 model SubmissionStatus {
-  PENDING
-  SUBMITTED
-  GRADED
+  PENDING   "PENDING"
+  SUBMITTED "SUBMITTED"
+  GRADED    "GRADED"
 }
 
 model Quiz {
@@ -181,11 +181,11 @@ model Question {
 }
 
 model QuestionType {
-  MULTIPLE_CHOICE
-  TRUE_FALSE
-  MATCHING
-  ESSAY
-  CODE_RUNNER
+  MULTIPLE_CHOICE "MULTIPLE_CHOICE"
+  TRUE_FALSE      "TRUE_FALSE"
+  MATCHING        "MATCHING"
+  ESSAY           "ESSAY"
+  CODE_RUNNER     "CODE_RUNNER"
 }
 
 model Attempt {
@@ -215,9 +215,9 @@ model GradeItem {
 }
 
 model GradeItemType {
-  ASSIGNMENT
-  QUIZ
-  EXAM
+  ASSIGNMENT "ASSIGNMENT"
+  QUIZ       "QUIZ"
+  EXAM       "EXAM"
 }
 
 model GradeEntry {
@@ -229,7 +229,7 @@ model GradeEntry {
   gradeItem  GradeItem  @relation(fields: [gradeItemId], references: [id])
   user       User       @relation(fields: [userId], references: [id])
   createdAt  DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  updatedAt  DateTime   @updatedAt
 }
 
 model Forum {
@@ -282,11 +282,11 @@ model ScormAttempt {
 }
 
 model ScormStatus {
-  INITIALIZED
-  IN_PROGRESS
-  COMPLETED
-  FAILED
-  SUSPENDED
+  INITIALIZED "INITIALIZED"
+  IN_PROGRESS "IN_PROGRESS"
+  COMPLETED   "COMPLETED"
+  FAILED      "FAILED"
+  SUSPENDED   "SUSPENDED"
 }
 
 model XapiStatement {
@@ -324,9 +324,9 @@ model CalendarEvent {
 }
 
 model CalendarEventType {
-  CLASS
-  DEADLINE
-  EXAM
-  MEETING
-  OTHER
+  CLASS     "CLASS"
+  DEADLINE  "DEADLINE"
+  EXAM      "EXAM"
+  MEETING   "MEETING"
+  OTHER     "OTHER"
 }
